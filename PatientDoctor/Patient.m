@@ -17,11 +17,17 @@
         
         _name = name;
         _age = age;
+        _hasValidHealthCard = YES;
+        _doctor = nil;
         
     }
     
     
     return self;
+}
+
+-(void)visitDoctor:(Doctor *)doctor {
+    
 }
 
 @end

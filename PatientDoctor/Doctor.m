@@ -16,11 +16,19 @@
         
         _name = name;
         _specialization = specialization;
+        _acceptedPatients = [[NSMutableArray alloc]init];
     
     }
     return self;
 }
 
+-(void)acceptPatient:(Patient *)patient {
+    
+    if (patient.hasValidHealthCard) {
+        [self.acceptedPatients addObject:patient];
+    }
+    
+}
 
 
 @end

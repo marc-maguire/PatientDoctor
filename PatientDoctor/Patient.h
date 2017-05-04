@@ -15,7 +15,9 @@
 @property (nonatomic, weak) Doctor *doctor;
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic) NSInteger age;
+@property (nonatomic) BOOL hasValidHealthCard;
 
 - (instancetype)initWithName:(NSString *)name andAge:(NSInteger)age;
+- (void)visitDoctor:(Doctor *)doctor;
 
 @end
