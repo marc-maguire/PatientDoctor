@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 @class Doctor;
+#import "Prescription.h"
 
 @interface Patient : NSObject
 
@@ -16,8 +17,12 @@
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic) NSInteger age;
 @property (nonatomic) BOOL hasValidHealthCard;
+@property (nonatomic) NSString *currentSymptoms;
+@property (nonatomic) Prescription *prescription;
+//@property (nonatomic) NSMutableArray<Prescription *> *pastPrescriptions; //of Prescription
 
 - (instancetype)initWithName:(NSString *)name andAge:(NSInteger)age;
 - (void)visitDoctor:(Doctor *)doctor;
+- (void)requestMedicationFrom:(Doctor *)doctor;
 
 @end

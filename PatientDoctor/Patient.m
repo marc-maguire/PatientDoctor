@@ -15,11 +15,13 @@
     
     if (self = [super init]) {
         
+        _doctor = nil;
         _name = name;
         _age = age;
         _hasValidHealthCard = YES;
-        _doctor = nil;
-        
+        _currentSymptoms = nil;
+        _prescription = nil;
+//        _pastPrescriptions = [[NSMutableArray alloc]init];
     }
     
     
@@ -28,6 +30,21 @@
 
 -(void)visitDoctor:(Doctor *)doctor {
     
+    if ([doctor acceptPatient:self]){
+        self.doctor = doctor;
+    } else {
+        NSLog(@"Doctor did not accept you");
+    }
 }
+
+- (void)requestMedicationFrom:(Doctor *)doctor{
+    
+    if ([self.doctor.acceptedPatients containsObject:self]) {
+        [doctor approveMedicationRequestOf:self];
+    }
+    
+}
+
+
 
 @end
