@@ -8,6 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+//model interaction between doctor and patient
+//think about encapsulation
+//NSLog in methods to see what is being called
+
+
+
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         // insert code here...
